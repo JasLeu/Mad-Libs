@@ -18,7 +18,7 @@ public class MadLibs {
         // declares and initiates the variables
         Scanner input = new Scanner(System.in);
 
-        
+        // 3 templates to use
         String template = "Bob <last name> is from <place> and is <number> years old.";
 
 
@@ -32,20 +32,26 @@ public class MadLibs {
         int openBracket; 
         int closedBracket;
         
-        //finds the index of both the first closed and opened bracket
+        // finds the index of both the first closed and opened bracket
         openBracket = template.indexOf("<");
         closedBracket = template.indexOf(">");
 
-        //takes the text in between the brackets and asks for the user to input that type of word
+
+        // block of code {
+        // takes the text in between the brackets and asks for the user to input that type of word
         System.out.print("Give me a " + template.substring(openBracket+1, closedBracket) + ": ");
-        //takes the users input
+
+        // takes the users input
         String userInput = input.nextLine();
-        //appends everything from the begining of the template to the open bracket and adds user input
+
+        // appends everything from the begining of the template to the open bracket and adds user input
         String finalMadLib = template.substring(0,openBracket) + userInput;
 
 
-        template = template.substring(closedBracket+1);//sets template to everything after first brackets
-
+        // sets template to everything after first brackets
+        template = template.substring(closedBracket+1);
+        
+        // } code ends
         
         openBracket = template.indexOf("<");
         closedBracket = template.indexOf(">");
@@ -64,9 +70,13 @@ public class MadLibs {
 
         template = template.substring(closedBracket+1);
 
-        finalMadLib += template;//adds the rest of the template onto the final Mad Lib
+        // adds the rest of the template onto the final Mad Lib
+        finalMadLib += template;
 
-        System.out.println(finalMadLib);//prints the full Mad Lib
-        input.close();//closes the scanner
+        // prints the full Mad Lib
+        System.out.println(finalMadLib);
+
+        // closes the scanner
+        input.close();
     }
 }
