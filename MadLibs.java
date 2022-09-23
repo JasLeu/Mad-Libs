@@ -28,18 +28,45 @@ public class MadLibs {
         // String template = "My very <adjective> cat named <name> likes <food>, and eats it every day.";
 
 
+        // declares the two variables to check the index of the brackets
+        int openBracket; 
+        int closedBracket;
         
-        int openBracket = template.indexOf("<");
-        int closedBracket = template.indexOf(">");
+        //finds the index of both the first closed and opened bracket
+        openBracket = template.indexOf("<");
+        closedBracket = template.indexOf(">");
+
+        //takes the text in between the brackets and asks for the user to input that type of word
         System.out.print("Give me a " + template.substring(openBracket+1, closedBracket) + ": ");
-        String userInput = input.next();
+        //takes the users input
+        String userInput = input.nextLine();
+        //appends everything from the begining of the template to the open bracket and adds user input
         String finalMadLib = template.substring(0,openBracket) + userInput;
 
+
+        template = template.substring(closedBracket+1);//sets template to everything after first brackets
+
+        
         openBracket = template.indexOf("<");
         closedBracket = template.indexOf(">");
         System.out.print("Give me a " + template.substring(openBracket+1, closedBracket) + ": ");
-        userInput = input.next();
-        finalMadLib = template.substring(0,openBracket) + userInput;
+        userInput = input.nextLine();
+        finalMadLib += template.substring(0, openBracket) + userInput;
 
+        template = template.substring(closedBracket+1);
+
+        
+        openBracket = template.indexOf("<");
+        closedBracket = template.indexOf(">");
+        System.out.print("Give me a " + template.substring(openBracket+1, closedBracket) + ": ");
+        userInput = input.nextLine();
+        finalMadLib += template.substring(0,openBracket) + userInput;
+
+        template = template.substring(closedBracket+1);
+
+        finalMadLib += template;//adds the rest of the template onto the final Mad Lib
+
+        System.out.println(finalMadLib);//prints the full Mad Lib
+        input.close();//closes the scanner
     }
 }
