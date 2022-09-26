@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class MadLibs {
 
     // methods and variables for the templates
-    class Storage {
+    static class Storage {
         static String template;
         static String template1 = "Bob <last name> is from <place> and is <number> years old.";
         static String template2 = "I <verb (past-tense)> with my <object> to help my <relationship>.";
