@@ -92,30 +92,5 @@ public class MadLibs {
 
         // closes the scanner
         input.close();
-
-        /*
- * Activity 2.4.3
- */
-import java.util.Scanner;
-import java.util.ArrayList;
-
-public class RemoveVowels
-{
-  public static void main(String[] args)
-  {
-  Scanner input = new Scanner(System.in);
-  ArrayList<String> vowels = new ArrayList<String>();
-  vowels.add("a");vowels.add("e");vowels.add("i");vowels.add("o");vowels.add("u");
-  System.out.println(vowels);
-  String userInput = input.nextLine();
-  String output = "e";
-  for (int i = 0; i < userInput.length(); i++) {
-    if (vowels.contains(userInput.substring(i, i++))) {
-      output += userInput.substring(i, i++);
-    }
-  }
-  System.out.print(output);
-  }
-}
     }
 }
